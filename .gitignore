@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+Logs/
+BUILD_LOG.txt
+Factory/bin/
+Factory/obj/
+*.esriAddInX

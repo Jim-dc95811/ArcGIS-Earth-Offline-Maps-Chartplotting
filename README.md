@@ -2,8 +2,6 @@
 
 > **Build high-detail maps once. Carry them offline. Keep the field display useful when the network is gone.**
 
-![TPKX Factory](assets/tpkx-factory.png)
-
 This repository packages a practical offline-map workflow around **ArcGIS Pro**, **TPKX tile packages**, **ArcGIS Earth**, and an optional **PRAVE / ME live field tracker**.
 
 The project has moved well past a one-machine proof of concept. A **300+ GB district-wide Z20 archive** has been built and exercised across Windows desktops/laptops, Android phones/tablets, and an Amazon Fire tablet. On Android, TPKX files have also been opened from internal storage, microSD, and exFAT USB media.
@@ -47,20 +45,28 @@ Raveon mixed serial -> RMC = ME -> ArcGIS Earth camera center
                     -> PRAVE    -> remote units + RSSI drawings
 ```
 
-![PRAVE / ME center tracking](assets/prave-me-tracking.png)
+```mermaid
+flowchart LR
+    A[GPS points / known extent] --> B[TPKX Extent Tool]
+    B --> C[ArcGIS TPKX Batch Factory]
+    C --> D[Finished TPKX archive]
+    D --> E[Windows ArcGIS Earth]
+    D --> F[ArcGIS Earth Mobile]
+    F --> G[Internal / microSD / USB]
+```
 
 ## Start here
 
 1. Read the [end-to-end workflow](docs/WORKFLOW.md).
-2. Build or load your production extents with the [TPKX Extent Tool](tools/tpkx-extent-tool/).
-3. Produce TPKX files with the [Batch Factory](tools/tpkx-batch-factory/).
+2. Build or load your production extents with the [TPKX Extent Tool guide](docs/TPKX_EXTENT_TOOL.md).
+3. Produce TPKX files with the [Batch Factory operator guide](docs/TPKX_BATCH_FACTORY.md).
 4. Review the [mobile offline field notes](docs/MOBILE_OFFLINE.md).
 5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md).
 
 ## Manuals
 
-- [TPKX Extent Tool v2 - User Manual](docs/TPKX_Extent_Tool_Manual.pdf)
-- [ArcGIS TPKX Batch Factory - Operator Manual](docs/TPKX_Batch_Factory_Manual.pdf)
+- [TPKX Extent Tool v2 - Guide](docs/TPKX_EXTENT_TOOL.md)
+- [ArcGIS TPKX Batch Factory - Operator Guide](docs/TPKX_BATCH_FACTORY.md)
 
 The Extent Tool is intentionally only an extent generator; it does not download imagery or create TPKX files itself. The Factory is the production engine that consumes those extent lines. The manuals describe the same split: the 24-box grid handles controlled production, while the 10-box 2 x 5 cut is the project-standard Z20 batch size.
 
@@ -107,7 +113,7 @@ See [Official Esri References](docs/OFFICIAL_ESRI_LINKS.md) for the ArcGIS Earth
 
 ## Project status
 
-The three published packages here are the cleaned project distributions built from the current field-tested source supplied to this repository. Development/test-era filenames and cache files have been removed from the downloadable packages where they were not operationally required.
+The three published ZIPs are cleaned project distributions built from the current field-tested packages supplied for this repository. Development/test-era names and cache files were removed where they were not operationally required. The downloadable ZIPs contain the program source and launch/build files; the repository front page stays intentionally uncluttered.
 
 ---
 
