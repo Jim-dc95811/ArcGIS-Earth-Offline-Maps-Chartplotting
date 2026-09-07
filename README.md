@@ -14,6 +14,15 @@ The project has moved well past a one-machine proof of concept. A **300+ GB dist
 | **ArcGIS TPKX Batch Factory** | ArcGIS Pro add-in that turns 1-10 controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. | [ZIP](downloads/TPKX_Batch_Factory_v1.zip) |
 | **PRAVE / ME Tracker** | Reads mixed RMC/PRAVE serial data and draws/tracks ME and remote units directly in ArcGIS Earth through the local Automation API. | [ZIP](downloads/PRAVE_ME_Tracker_v1.zip) |
 
+## Watch the project
+
+| | |
+|---|---|
+| [![Pre-Loaded Satellite Maps for First Responders](https://img.youtube.com/vi/xPA3QfAW4aY/hqdefault.jpg)](https://www.youtube.com/watch?v=xPA3QfAW4aY)<br>**Pre-Loaded Satellite Maps for First Responders** | [![Android Offline ArcGIS Earth](https://img.youtube.com/vi/uL69NTVnafE/hqdefault.jpg)](https://www.youtube.com/watch?v=uL69NTVnafE)<br>**Transforming an Android Phone into an ArcGIS Earth Map Viewer** |
+| [![TPKX Factory](https://img.youtube.com/vi/KGckjaOu0hY/hqdefault.jpg)](https://www.youtube.com/watch?v=KGckjaOu0hY)<br>**TPKX Factory — Satellite Maps at Scale** | [![ArcGIS Earth Offline Georeferenced Chart Plotting](https://img.youtube.com/vi/JKWJmEIBP_I/hqdefault.jpg)](https://www.youtube.com/watch?v=JKWJmEIBP_I)<br>**ArcGIS Earth Offline Georeferenced Chart Plotting** |
+
+These short videos show the project from the field-use side first: why pre-loaded imagery matters, how Android can become a dedicated offline ArcGIS Earth viewer, how the TPKX production workflow scales, and how ArcGIS Earth can also serve as an offline georeferenced chartplotter.
+
 ## Workflow
 
 ```text
