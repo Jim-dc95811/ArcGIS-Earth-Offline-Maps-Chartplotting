@@ -11,7 +11,7 @@ ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or
 ### **⬇️ [DOWNLOAD PRAVE / ME TRACKER](downloads/PRAVE_ME_Tracker_v1.zip)**
 Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API.
 
-> **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/Earth-Beacon/blob/main/ARCGIS_EARTH_UNLOCKED.md) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/Earth-Beacon).
+> **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/Earth-Beacon/blob/main/ARCGIS_EARTH_UNLOCKED.md) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
 
 > **Build high-detail maps once. Carry them offline. Keep the field display useful when the network is gone.**
 
@@ -21,11 +21,19 @@ The project has moved well past a one-machine proof of concept. A **300+ GB dist
 
 ## The three tools
 
-| Tool | Job | Download |
-|---|---|---|
-| **TPKX Extent Tool v2** | Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents. | [ZIP](downloads/TPKX_Extent_Tool_v2.zip) |
-| **ArcGIS TPKX Batch Factory** | ArcGIS Pro add-in that turns 1-10 controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. | [ZIP](downloads/TPKX_Batch_Factory_v1.zip) |
-| **PRAVE / ME Tracker** | Reads mixed RMC/PRAVE serial data and draws/tracks ME and remote units directly in ArcGIS Earth through the local Automation API. | [ZIP](downloads/PRAVE_ME_Tracker_v1.zip) |
+| Tool | Job |
+|---|---|
+| **TPKX Extent Tool v2** | Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents. |
+| **ArcGIS TPKX Batch Factory** | ArcGIS Pro add-in that turns 1-10 controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. |
+| **PRAVE / ME Tracker** | Reads mixed RMC/PRAVE serial data and draws/tracks ME and remote units directly in ArcGIS Earth through the local Automation API. |
+
+## Start here
+
+1. Read the [end-to-end workflow](docs/WORKFLOW.md).
+2. Build or load your production extents with the [TPKX Extent Tool guide](docs/TPKX_EXTENT_TOOL.md).
+3. Produce TPKX files with the [Batch Factory operator guide](docs/TPKX_BATCH_FACTORY.md).
+4. Review the [mobile offline field notes](docs/MOBILE_OFFLINE.md).
+5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md).
 
 ## Watch the project
 
@@ -76,14 +84,6 @@ flowchart LR
     D --> F[ArcGIS Earth Mobile]
     F --> G[Internal / microSD / USB]
 ```
-
-## Start here
-
-1. Read the [end-to-end workflow](docs/WORKFLOW.md).
-2. Build or load your production extents with the [TPKX Extent Tool guide](docs/TPKX_EXTENT_TOOL.md).
-3. Produce TPKX files with the [Batch Factory operator guide](docs/TPKX_BATCH_FACTORY.md).
-4. Review the [mobile offline field notes](docs/MOBILE_OFFLINE.md).
-5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md).
 
 ## Manuals
 
