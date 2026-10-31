@@ -19,6 +19,10 @@ This repository packages a practical offline-map workflow around **ArcGIS Pro**,
 
 The project has moved well past a one-machine proof of concept. A **300+ GB district-wide Z20 archive** has been built and exercised across Windows desktops/laptops, Android phones/tablets, and an Amazon Fire tablet. On Android, TPKX files have also been opened from internal storage, microSD, and exFAT USB media.
 
+[![Pre-Loaded Satellite Maps for First Responders](https://img.youtube.com/vi/xPA3QfAW4aY/hqdefault.jpg)](https://www.youtube.com/watch?v=xPA3QfAW4aY)
+
+*Pre-loaded ArcGIS Earth imagery for field use when the network is gone.*
+
 ## The three tools
 
 | Tool | Job |
