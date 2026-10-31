@@ -11,7 +11,7 @@ ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or
 ### **⬇️ [DOWNLOAD PRAVE / ME TRACKER](downloads/PRAVE_ME_Tracker_v1.zip)**
 Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API.
 
-> **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/Earth-Beacon/blob/main/ARCGIS_EARTH_UNLOCKED.md) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
+> **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
 
 > **Build high-detail maps once. Carry them offline. Keep the field display useful when the network is gone.**
 
