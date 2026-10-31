@@ -1,5 +1,16 @@
 # ArcGIS Earth Offline Maps & Field Tracking
 
+## Download the tools
+
+### **⬇️ [DOWNLOAD TPKX EXTENT TOOL v2](downloads/TPKX_Extent_Tool_v2.zip)**
+Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents.
+
+### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
+ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20.
+
+### **⬇️ [DOWNLOAD PRAVE / ME TRACKER](downloads/PRAVE_ME_Tracker_v1.zip)**
+Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API.
+
 > **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/Earth-Beacon/blob/main/ARCGIS_EARTH_UNLOCKED.md) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/Earth-Beacon).
 
 > **Build high-detail maps once. Carry them offline. Keep the field display useful when the network is gone.**
