@@ -3,15 +3,23 @@
 ## Download the tools
 
 ### **⬇️ [DOWNLOAD TPKX EXTENT TOOL v2](downloads/TPKX_Extent_Tool_v2.zip)**
+**📖 [User manual](docs/TPKX_EXTENT_TOOL.md)**
+
 Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents.
 
 ### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
+**📖 [User manual](docs/TPKX_BATCH_FACTORY.md)**
+
 ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20.
 
 ### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.2](downloads/PRAVE_ME_Tracker_v1.zip)**
+**📖 [User manual](docs/PRAVE_ME_TRACKER.md)**
+
 Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixed the launchers and keeps units on the map through a serial reconnect; v1.2 keeps a Windows proxy setting from blocking the connection to ArcGIS Earth ([changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
 
 ### **⬇️ [DOWNLOAD PRAVE / RMC FIELD DECODER TESTER v1.0 GOLD](downloads/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip)**
+**📖 [User manual (PDF)](docs/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold_Instructions.pdf)**
+
 Bench-test the tracker without a radio: a simulated Raveon RMC/PRAVE stream with six units covering every RSSI icon ([bench-test guide](docs/PRAVE_ME_TRACKER.md#bench-testing-without-a-radio)).
 
 > **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
