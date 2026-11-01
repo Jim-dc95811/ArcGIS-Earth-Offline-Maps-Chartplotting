@@ -23,7 +23,7 @@ The tracker reads ArcGIS Earth's current camera, replaces only the camera X/Y wi
 - ArcGIS Earth desktop
 - ArcGIS Earth Automation API enabled
 - Python 3
-- `pyserial`
+- `pyserial` - install once from a Command Prompt with `py -m pip install pyserial`
 - Mixed Raveon RMC/PRAVE serial input
 
 ## ArcGIS Earth setup
@@ -35,10 +35,10 @@ The tracker reads ArcGIS Earth's current camera, replaces only the camera X/Y wi
 
 ## Tracker setup
 
-1. Extract `PRAVE_ME_Tracker_v1.zip`, then open `PRAVE_ME_Tracker.py` in the extracted folder.
-2. Change only `INPUT_PORT` and, if necessary, `INPUT_BAUD` above the `HERE BE DRAGONS` line. If your RSSI icons live somewhere other than `C:\MyData\PRAVE_ME\Icons`, also set `ICON_FOLDER`.
-3. Run `SELF_TEST.bat`.
-4. Connect the radio/test source and run `START_TRACKER.bat`.
+1. Download [`PRAVE_ME_Tracker_v1.zip`](../downloads/PRAVE_ME_Tracker_v1.zip) and extract it. Open `PRAVE_ME_Tracker.py` from the extracted `PRAVE_ME_Tracker` folder in Notepad (right-click > Edit).
+2. Change only `INPUT_PORT` (default `COM12`) and, if necessary, `INPUT_BAUD` (default `19200`) above the `HERE BE DRAGONS` line. Save the file. If your RSSI icons live somewhere other than `C:\MyData\PRAVE_ME\Icons`, also set `ICON_FOLDER`.
+3. Run `SELF_TEST.bat`. It checks the decoder without a radio or ArcGIS Earth.
+4. Open ArcGIS Earth, connect the radio or test source, and run `START_TRACKER.bat`. The console shows status and unit counts; when the tracker stops, it prints its exit code and waits for a key press.
 
 ## RSSI icons
 
@@ -77,10 +77,10 @@ Keep both at 19200 baud.
 
 ### Running a bench test
 
-1. Run the tester self-test: `python PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.py --self-test`. It should report 7 valid sentences.
+1. Run the tester self-test from a Command Prompt in the tester's folder: `py PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.py --self-test` (or `python ...` if the `py` launcher is not installed). It should report 7 valid sentences.
 2. Run the tracker's `SELF_TEST.bat`.
 3. Open ArcGIS Earth with the Automation API enabled.
-4. Start the tracker with `START_TRACKER.bat`, then start the tester with its `Run_...bat`.
+4. Start the tracker with `START_TRACKER.bat`, then start the tester with `Run_PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.bat`. (The tester's launcher calls `python`, so Python must be on the PATH: tick "Add python.exe to PATH" when installing Python.)
 5. Within about 10-20 seconds, ME and all six trucks should appear, each with its own RSSI icon.
 6. To test recovery, unplug the serial link for a few seconds and plug it back in. The trucks should stay on the map while the tracker reconnects.
 
@@ -107,3 +107,5 @@ Logs are written to the `Logs` folder beside the tracker. Useful entries:
 - `RMC_BAD` / `PRAVE_BAD` - a sentence failed its checksum or field checks.
 - `GPS_NO_FIX` / `GPS_FIX_RESTORED` - the GPS lost and regained its fix.
 - `ICON_WARNING` - the icon folder or an icon file is missing.
+- `RECONNECT` - the serial link dropped; the tracker is waiting 5 seconds before trying again.
+- `ERROR pyserial is not installed` - run `py -m pip install pyserial`.

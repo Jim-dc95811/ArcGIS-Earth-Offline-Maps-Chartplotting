@@ -6,10 +6,34 @@ The Batch Factory is an ArcGIS Pro add-in that turns controlled **EPSG:3857 exte
 
 - Map product: **Satellite Imagery**, **Road Overlay**, or **Both**.
 - Maximum zoom: **Z16, Z17, Z18, Z19, or Z20**.
-- Destination folder.
+- Destination folder (default `D:\New TPKX\ArcGIS`; use **Browse...** to choose another; it is created if needed).
 - **1-10** canonical EPSG:3857 extent lines, normally rows from the [Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md) TXT file.
 
 > **Pasting Master 4 rows into the Batch Factory:** delete the file name at the end of each row first. The Factory accepts `01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857]` but rejects the same row with `W082W081N031N030-001-GHY-Z20.tpkx` still on the end.
+
+## Install the add-in
+
+The Factory is delivered as source code that builds itself into an ArcGIS Pro add-in on your computer.
+
+You need:
+
+- Windows with **ArcGIS Pro 3.7** installed and licensed in the standard location (`C:\Program Files\ArcGIS\Pro`).
+- The **Microsoft .NET 10 SDK** (from Microsoft's .NET download page), installed in the standard location.
+- Internet access while building TPKX files.
+
+Steps:
+
+1. Close ArcGIS Pro.
+2. Download [`TPKX_Batch_Factory_v1.zip`](../downloads/TPKX_Batch_Factory_v1.zip) and extract it to a normal folder.
+3. Double-click `BUILD_INSTALL.bat`. A small "Building ArcGIS TPKX Factory..." window appears.
+4. When it says **Build complete**, click OK. The ArcGIS Add-In Installation Utility opens: click **Install Add-In**.
+5. Start ArcGIS Pro. The Factory appears on the **Add-In** tab as **Open Factory** (group **TPKX Factory**).
+
+If the build fails, a message names the problem (for example ".NET build tools were not found." or "ArcGIS Pro SDK build target was not found.") and the details are written to `BUILD_LOG.txt` beside `BUILD_INSTALL.bat`. Nothing is installed after a failed build.
+
+## Open the Factory
+
+Open any ArcGIS Pro project, go to the **Add-In** tab and click **Open Factory**. The **ArcGIS TPKX Batch Factory** window opens; it can be moved and resized and stays open while you work.
 
 The visible map in ArcGIS Pro is not the production map. The Factory creates private maps for preflight and production, keeping each job isolated.
 
@@ -18,7 +42,7 @@ The visible map in ArcGIS Pro is not the production map. The Factory creates pri
 1. Open ArcGIS Pro and launch the Factory add-in.
 2. Keep internet access available during production; the Factory is building offline files but must retrieve the selected tiles while it runs.
 3. Choose a destination with enough free space.
-4. Paste 1-10 extent lines.
+4. Paste 1-10 extent lines: type or paste one per row, or copy several lines and press **PASTE MULTIPLE EXTENTS** to fill the rows in order (only the first 10 are used). **CLEAR ROWS** empties all rows.
 5. Choose the product and maximum zoom.
 6. **Leave the destination folder alone once the batch starts.**
 
@@ -33,7 +57,7 @@ Do not rename, move, copy, add, or delete TPKX files in the destination during a
 5. Press **BUILD BATCH**.
 6. Watch the Job and Status indicators.
 
-The Factory preflights all requested extents before starting production. It does not silently lower an unsupported zoom.
+The Factory preflights all requested extents before starting production. If a row cannot be read, the status box shows `BATCH INPUT ERROR` with the row number. It does not silently lower an unsupported zoom: a zoom ArcGIS cannot export for an extent stops the batch before any file is made.
 
 ## Between jobs
 
@@ -45,14 +69,14 @@ Each extent is exported from a newly created private map. After every third comp
 
 ## Outputs and protection
 
-Typical output names:
+`<LABEL>` is the label at the start of each extent row (for a Master 4 row, the cell number such as `01`); a row without a label is named `JOB01`, `JOB02` and so on. Output names:
 
 ```text
 World_Imagery Grid <LABEL>.tpkx
 Reference_World_Transportation Grid <LABEL>.tpkx
 ```
 
-If an expected output already exists, the batch does not start. Each run also writes a timestamped batch log to the destination folder.
+If an expected output already exists, the batch does not start. Each run also writes a timestamped batch log, `ArcGIS_TPKX_Batch_<date>_<time>.txt`, to the destination folder.
 
 For a single-product job the Factory expects exactly one new TPKX file; for **Both**, exactly two. A different count triggers a safety stop.
 
