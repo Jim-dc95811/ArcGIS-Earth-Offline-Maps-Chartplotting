@@ -7,7 +7,9 @@ The Batch Factory is an ArcGIS Pro add-in that turns controlled **EPSG:3857 exte
 - Map product: **Satellite Imagery**, **Road Overlay**, or **Both**.
 - Maximum zoom: **Z16, Z17, Z18, Z19, or Z20**.
 - Destination folder.
-- **1-10** canonical EPSG:3857 extent lines.
+- **1-10** canonical EPSG:3857 extent lines, normally rows from the [Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md) TXT file.
+
+> **Pasting Master 4 rows into the Batch Factory:** delete the file name at the end of each row first. The Factory accepts `01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857]` but rejects the same row with `W082W081N031N030-001-GHY-Z20.tpkx` still on the end.
 
 The visible map in ArcGIS Pro is not the production map. The Factory creates private maps for preflight and production, keeping each job isolated.
 

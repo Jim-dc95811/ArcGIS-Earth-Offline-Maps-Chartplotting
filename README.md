@@ -2,15 +2,10 @@
 
 ## Download the tools
 
-### **⬇️ [DOWNLOAD TPKX EXTENT TOOL v2](downloads/TPKX_Extent_Tool_v2.zip)**
-**📖 [User manual](docs/TPKX_EXTENT_TOOL.md)**
-
-Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents.
-
 ### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
 **📖 [User manual](docs/TPKX_BATCH_FACTORY.md)**
 
-ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20.
+ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. The extents come from the [Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md).
 
 ### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.2](downloads/PRAVE_ME_Tracker_v1.zip)**
 **📖 [User manual](docs/PRAVE_ME_TRACKER.md)**
@@ -34,18 +29,20 @@ The project has moved well past a one-machine proof of concept. A **300+ GB dist
 
 *Pre-loaded ArcGIS Earth imagery for field use when the network is gone.*
 
-## The three tools
+## The tools
 
 | Tool | Job |
 |---|---|
-| **TPKX Extent Tool v2** | Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents. |
 | **ArcGIS TPKX Batch Factory** | ArcGIS Pro add-in that turns 1-10 controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. |
 | **PRAVE / ME Tracker** | Reads mixed RMC/PRAVE serial data and draws/tracks ME and remote units directly in ArcGIS Earth through the local Automation API. |
+| **PRAVE / RMC Field Decoder Tester** | Simulated radio stream for trying the tracker on the bench. |
+
+The production extents come from the **[Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md)**, which replaced the earlier TPKX Extent Tool.
 
 ## Start here
 
 1. Read the [end-to-end workflow](docs/WORKFLOW.md).
-2. Build or load your production extents with the [TPKX Extent Tool guide](docs/TPKX_EXTENT_TOOL.md).
+2. Make your production extents with the [Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md).
 3. Produce TPKX files with the [Batch Factory operator guide](docs/TPKX_BATCH_FACTORY.md).
 4. Review the [mobile offline field notes](docs/MOBILE_OFFLINE.md).
 5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md). To try it without a radio, use the [PRAVE / RMC Field Decoder Tester](docs/PRAVE_ME_TRACKER.md#bench-testing-without-a-radio).
@@ -62,13 +59,13 @@ These short videos show the project from the field-use side first: why pre-loade
 ## Workflow
 
 ```text
-GPS points / known extent
+  Master 4 box (1 degree)
           |
           v
-   TPKX Extent Tool
+  Master 4 Grid Maker
           |
           v
-  24-box or 10-box grids
+ 100 cell extent rows
           |
           v
 ArcGIS TPKX Batch Factory
@@ -92,7 +89,7 @@ Raveon mixed serial -> RMC = ME -> ArcGIS Earth camera center
 
 ```mermaid
 flowchart LR
-    A[GPS points / known extent] --> B[TPKX Extent Tool]
+    A[Master 4 box] --> B[Master 4 Grid Maker]
     B --> C[ArcGIS TPKX Batch Factory]
     C --> D[Finished TPKX archive]
     D --> E[Windows ArcGIS Earth]
@@ -102,10 +99,14 @@ flowchart LR
 
 ## Manuals
 
-- [TPKX Extent Tool v2 - Guide](docs/TPKX_EXTENT_TOOL.md)
 - [ArcGIS TPKX Batch Factory - Operator Guide](docs/TPKX_BATCH_FACTORY.md)
+- [PRAVE / ME Tracker - Guide](docs/PRAVE_ME_TRACKER.md)
+- [PRAVE / RMC Field Decoder Tester - Instructions (PDF)](docs/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold_Instructions.pdf)
+- [Master 4 Grid Maker - Guide](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md) (in the companion MBTiles/TPKX repository)
 
-The Extent Tool is intentionally only an extent generator; it does not download imagery or create TPKX files itself. The Factory is the production engine that consumes those extent lines. The manuals describe the same split: the 24-box grid handles controlled production, while the 10-box 2 x 5 cut is the project-standard Z20 batch size.
+The Master 4 Grid Maker only makes extents; it does not download imagery. The Factory is the production engine that consumes those extent rows.
+
+> **Pasting Master 4 rows into the Batch Factory:** delete the file name at the end of each row first. The Factory accepts `01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857]` but rejects the same row with `W082W081N031N030-001-GHY-Z20.tpkx` still on the end.
 
 ## What is field-proven here
 
@@ -120,11 +121,6 @@ The Extent Tool is intentionally only an extent generator; it does not download 
 Project-tested behavior is described as such; it should not be read as a guarantee for every Android OEM, ArcGIS version, storage device, or radio configuration.
 
 ## Requirements at a glance
-
-### Extent Tool
-- Windows
-- Python 3
-- Windows Clipboard History only if using the two-GPS-point helper
 
 ### Batch Factory
 - Windows
@@ -157,7 +153,7 @@ See [Official Esri References](docs/OFFICIAL_ESRI_LINKS.md) for the ArcGIS Earth
 
 ## Project status
 
-The three tool ZIPs are cleaned project distributions built from the current field-tested packages supplied for this repository. Development/test-era names and cache files were removed where they were not operationally required. The downloadable ZIPs contain the program source and launch/build files; the repository front page stays intentionally uncluttered. The PRAVE / RMC Field Decoder Tester ZIP is the owner's Gold bench generator, published unmodified; its development activity log was left out.
+The tool ZIPs are cleaned project distributions built from the current field-tested packages supplied for this repository. Development/test-era names and cache files were removed where they were not operationally required. The downloadable ZIPs contain the program source and launch/build files; the repository front page stays intentionally uncluttered. The PRAVE / RMC Field Decoder Tester ZIP is the owner's Gold bench generator, published unmodified; its development activity log was left out. The earlier TPKX Extent Tool v2 was retired on 2026-11-01 in favor of the Master 4 system; its zip and guide remain in this repository's Git history.
 
 ---
 

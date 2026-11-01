@@ -4,11 +4,11 @@ This repository is organized around a simple production chain rather than a coll
 
 ## 1. Define the map area
 
-Use the **TPKX Extent Tool** to create or load a parent EPSG:3857 extent. From there you can generate aligned neighboring blocks, a 24-box 6 x 4 production split, or the project-standard 10-box 2 x 5 split used for Z20 production.
+Use the **[Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md)** to split a 1-degree Master 4 box into 100 numbered cells. Its TXT file lists each cell's EPSG:3857 extent, and its numbered GeoTIFF shows the cells over the map. The same cell numbers are used by Parcel100 and the other Master 4 tools.
 
 ## 2. Build the TPKX packages
 
-Paste the resulting extent lines into the **ArcGIS TPKX Batch Factory** inside ArcGIS Pro. Select Satellite Imagery, Road Overlay, or Both; choose Z16-Z20; select a destination; and run the batch. The Factory preflights all requested extents before production.
+Paste up to 10 cell rows at a time into the **ArcGIS TPKX Batch Factory** inside ArcGIS Pro. Delete the file name at the end of each row first: the Factory accepts `01 xmin,xmax,ymin,ymax [EPSG:3857]` but rejects the row with the `.tpkx` name still on the end. Select Satellite Imagery, Road Overlay, or Both; choose Z16-Z20; select a destination; and run the batch. The Factory preflights all requested extents before production.
 
 **Important:** the Factory creates offline packages, but the production computer needs internet access while it downloads tiles from the selected Esri source. Do not edit the destination folder while a batch is running.
 
