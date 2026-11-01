@@ -16,9 +16,9 @@ ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or
 
 Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixed the launchers and keeps units on the map through a serial reconnect; v1.2 keeps a Windows proxy setting from blocking the connection to ArcGIS Earth ([changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
 
-[![Watch the PRAVE / ME tracker working in ArcGIS Earth on YouTube](https://img.youtube.com/vi/JKWJmEIBP_I/hqdefault.jpg)](https://www.youtube.com/watch?v=JKWJmEIBP_I)
+[![PRAVE / ME tracker in ArcGIS Earth: the ME marker and remote unit 1-173 drawn live over satellite imagery](images/prave_me_tracker_arcgis_earth.jpg)](https://www.youtube.com/watch?v=JKWJmEIBP_I)
 
-*▶️ [Watch the PRAVE / ME tracker working in ArcGIS Earth](https://www.youtube.com/watch?v=JKWJmEIBP_I) (YouTube).*
+*ME (blue marker) and remote unit 1-173 drawn live in ArcGIS Earth. ▶️ [Watch the video](https://www.youtube.com/watch?v=JKWJmEIBP_I) (YouTube).*
 
 ### **⬇️ [DOWNLOAD PRAVE / RMC FIELD DECODER TESTER v1.0 GOLD](downloads/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip)**
 **📖 [User manual (PDF)](docs/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold_Instructions.pdf)**
