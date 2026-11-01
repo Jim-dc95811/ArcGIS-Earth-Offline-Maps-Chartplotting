@@ -1,5 +1,7 @@
 # ArcGIS TPKX Batch Factory
 
+A printable copy of this guide is available as [TPKX_Batch_Factory_User_Guide.pdf](TPKX_Batch_Factory_User_Guide.pdf).
+
 The Batch Factory is an ArcGIS Pro add-in that turns controlled **EPSG:3857 extents** into offline TPKX packages using ArcGIS Pro's native tile-cache export path.
 
 ## What the operator supplies

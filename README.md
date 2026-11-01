@@ -3,7 +3,7 @@
 ## Download the tools
 
 ### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
-**📖 [User manual](docs/TPKX_BATCH_FACTORY.md)**
+**📖 [User manual](docs/TPKX_BATCH_FACTORY.md)** ([PDF](docs/TPKX_Batch_Factory_User_Guide.pdf))
 
 ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20. The extents come from the [Master 4 Grid Maker](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/blob/main/MASTER4_GRID_MAKER.md).
 
