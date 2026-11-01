@@ -1,6 +1,6 @@
 # PRAVE / ME Tracker Guide
 
-**Current version: v1.1** (2026-10-31). See [PRAVE_ME_TRACKER_V1.1_CHANGES.md](PRAVE_ME_TRACKER_V1.1_CHANGES.md) for what changed from v1.0.
+**Current version: v1.2** (2026-10-31). See [PRAVE_ME_TRACKER_V1.1_CHANGES.md](PRAVE_ME_TRACKER_V1.1_CHANGES.md) for what changed in v1.1 and v1.2.
 
 The PRAVE / ME Tracker replaces the older KML/NetworkLink display path with direct ArcGIS Earth Automation API control.
 
@@ -103,7 +103,7 @@ If the serial link drops (USB cable pulled, radio power blip), the tracker keeps
 
 Logs are written to the `Logs` folder beside the tracker. Useful entries:
 
-- `API_BAD` - ArcGIS Earth did not accept an update; check that it is running with the Automation API enabled.
+- `API_BAD` - ArcGIS Earth did not accept an update; check that it is running with the Automation API enabled. (From v1.2 a Windows proxy setting can no longer cause this.)
 - `RMC_BAD` / `PRAVE_BAD` - a sentence failed its checksum or field checks.
 - `GPS_NO_FIX` / `GPS_FIX_RESTORED` - the GPS lost and regained its fix.
 - `ICON_WARNING` - the icon folder or an icon file is missing.

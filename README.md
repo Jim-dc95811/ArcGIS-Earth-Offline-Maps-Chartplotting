@@ -8,8 +8,8 @@ Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents.
 ### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
 ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20.
 
-### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.1](downloads/PRAVE_ME_Tracker_v1.zip)**
-Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixes the launchers in the download and keeps units on the map through a serial reconnect ([v1.1 changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
+### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.2](downloads/PRAVE_ME_Tracker_v1.zip)**
+Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixed the launchers and keeps units on the map through a serial reconnect; v1.2 keeps a Windows proxy setting from blocking the connection to ArcGIS Earth ([changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
 
 ### **⬇️ [DOWNLOAD PRAVE / RMC FIELD DECODER TESTER v1.0 GOLD](downloads/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip)**
 Bench-test the tracker without a radio: a simulated Raveon RMC/PRAVE stream with six units covering every RSSI icon ([bench-test guide](docs/PRAVE_ME_TRACKER.md#bench-testing-without-a-radio)).

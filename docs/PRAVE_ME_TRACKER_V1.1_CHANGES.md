@@ -1,8 +1,34 @@
-# PRAVE / ME Tracker v1.1 - change document
+# PRAVE / ME Tracker v1.1 and v1.2 - change document
+
+## v1.2 (2026-10-31)
+
+**One change:** the tracker's connection to the ArcGIS Earth Automation API on this computer never goes through a system or agency proxy.
+
+**v1.1:** the tracker used Python's standard web library, which honors the Windows proxy setting even for `localhost`. On a PC with a proxy and no "bypass for local addresses" exception, every drawing and camera update failed. Nothing appeared on the map, and the log filled with API errors.
+
+**v1.2:** local API calls bypass any proxy. Everything else is identical to v1.1.
+
+**Verification:**
+
+- Jim Gaddy's Gold simulator through the same mock-API test rig: v1.2 drawings and camera identical to v1.1, and the reconnect, API-outage and GPS no-fix scenarios unchanged. The self-test passes.
+- With a proxy configured: v1.1 drew nothing, while v1.2 drew all six units plus ME.
+- Same fix and test method as EarthStick 1.1.
+- The proxy case was verified in the test environment only.
+
+| File | v1.2 SHA-256 |
+|---|---|
+| `PRAVE_ME_Tracker.py` | `f1f0d8685675a59cc55de59d17a5aadd089a474fbcc3a9fc4f82dbd24bf98b56` |
+| `PRAVE_ME_Tracker_v1.zip` | `709cb4382a4c4c8f588889332f0edc8b3342a878085ce37349276cb95982b5e8` |
+
+The launchers are unchanged from v1.1.
+
+---
+
+## v1.1
 
 **Released:** 2026-10-31
 **Type:** hardening release. Packaging, reconnect behavior, error handling and logging.
-**Download:** [`downloads/PRAVE_ME_Tracker_v1.zip`](../downloads/PRAVE_ME_Tracker_v1.zip) (the file name is unchanged so existing links keep working; it now contains v1.1).
+**Download:** [`downloads/PRAVE_ME_Tracker_v1.zip`](../downloads/PRAVE_ME_Tracker_v1.zip). The file name is unchanged so existing links keep working; it now contains v1.2, which includes everything below.
 
 **The Gold decoding and display path is unchanged.** RMC and PRAVE checksum validation, field positions, coordinate conversion, district + 3-digit IDs, RSSI icon levels, the ArcGIS Earth drawing payloads and ME camera tracking (height, heading, tilt and roll preserved) are identical to v1.0. The user settings above HERE BE DRAGONS are unchanged.
 
@@ -69,6 +95,6 @@ Also checked:
 | `PRAVE_ME_Tracker.py` | `c1f2416c037dae7fada6b930b008a092290cc088b98b28f56936ab1ce27a23c4` |
 | `START_TRACKER.bat` | `2a7a5de6c432c2deb5eff588742a25acb50e1dcafb78b90b0401c81eca817039` |
 | `SELF_TEST.bat` | `d9765eed1a0b0285d3d31d3aab4dfb798e8ea537c197047a074eb80bc1dfa66b` |
-| `PRAVE_ME_Tracker_v1.zip` | `43ef8146bb3f4a6a23daa44b4d4a31e410de97eb7c31136078b114015f79f32d` |
+| `PRAVE_ME_Tracker_v1.zip` (as published with v1.1) | `43ef8146bb3f4a6a23daa44b4d4a31e410de97eb7c31136078b114015f79f32d` |
 
 v1.0 `PRAVE_ME_Tracker.py` SHA-256 for reference: `dca19a7e9a835f9ce4f94ab724a6e986f3d237b67fd133f6927694644ca2a0dd`. v1.0 remains available in the repository history.
