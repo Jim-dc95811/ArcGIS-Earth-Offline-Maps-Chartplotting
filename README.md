@@ -8,8 +8,8 @@ Build aligned EPSG:3857 parent, neighbor, 24-box, and 10-box production extents.
 ### **⬇️ [DOWNLOAD ARCGIS TPKX BATCH FACTORY](downloads/TPKX_Batch_Factory_v1.zip)**
 ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or Both TPKX packages at Z16-Z20.
 
-### **⬇️ [DOWNLOAD PRAVE / ME TRACKER](downloads/PRAVE_ME_Tracker_v1.zip)**
-Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API.
+### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.1](downloads/PRAVE_ME_Tracker_v1.zip)**
+Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixes the launchers in the download and keeps units on the map through a serial reconnect ([v1.1 changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
 
 > **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
 
