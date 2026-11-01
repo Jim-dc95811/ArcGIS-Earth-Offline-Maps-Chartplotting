@@ -23,11 +23,11 @@ You need:
 
 Steps:
 
-1. Close ArcGIS Pro.
+1. **Open ArcGIS Pro first** and leave it running.
 2. Download [`TPKX_Batch_Factory_v1.zip`](../downloads/TPKX_Batch_Factory_v1.zip) and extract it to a normal folder.
 3. Double-click `BUILD_INSTALL.bat`. A small "Building ArcGIS TPKX Factory..." window appears.
 4. When it says **Build complete**, click OK. The ArcGIS Add-In Installation Utility opens: click **Install Add-In**.
-5. Start ArcGIS Pro. The Factory appears on the **Add-In** tab as **Open Factory** (group **TPKX Factory**).
+5. Restart ArcGIS Pro once. The Factory appears on the **Add-In** tab as **Open Factory** (group **TPKX Factory**).
 
 If the build fails, a message names the problem (for example ".NET build tools were not found." or "ArcGIS Pro SDK build target was not found.") and the details are written to `BUILD_LOG.txt` beside `BUILD_INSTALL.bat`. Nothing is installed after a failed build.
 
