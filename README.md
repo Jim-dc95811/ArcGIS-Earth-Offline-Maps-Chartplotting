@@ -11,6 +11,9 @@ ArcGIS Pro add-in that turns controlled extents into Satellite, Road Overlay, or
 ### **⬇️ [DOWNLOAD PRAVE / ME TRACKER v1.1](downloads/PRAVE_ME_Tracker_v1.zip)**
 Track ME and remote PRAVE units directly in ArcGIS Earth through the local Automation API. v1.1 fixes the launchers in the download and keeps units on the map through a serial reconnect ([v1.1 changes](docs/PRAVE_ME_TRACKER_V1.1_CHANGES.md)).
 
+### **⬇️ [DOWNLOAD PRAVE / RMC FIELD DECODER TESTER v1.0 GOLD](downloads/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip)**
+Bench-test the tracker without a radio: a simulated Raveon RMC/PRAVE stream with six units covering every RSSI icon ([bench-test guide](docs/PRAVE_ME_TRACKER.md#bench-testing-without-a-radio)).
+
 > **ArcGIS Earth Unlocked:** this repository is the earlier offline-map/chartplotting/field-tracker branch of the broader project family. See the [master system map](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked) and the [ArcGIS Earth Object Factory](https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory).
 
 > **Build high-detail maps once. Carry them offline. Keep the field display useful when the network is gone.**
@@ -37,7 +40,7 @@ The project has moved well past a one-machine proof of concept. A **300+ GB dist
 2. Build or load your production extents with the [TPKX Extent Tool guide](docs/TPKX_EXTENT_TOOL.md).
 3. Produce TPKX files with the [Batch Factory operator guide](docs/TPKX_BATCH_FACTORY.md).
 4. Review the [mobile offline field notes](docs/MOBILE_OFFLINE.md).
-5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md).
+5. If you use Raveon PRAVE/RMC data, see the [PRAVE / ME Tracker guide](docs/PRAVE_ME_TRACKER.md). To try it without a radio, use the [PRAVE / RMC Field Decoder Tester](docs/PRAVE_ME_TRACKER.md#bench-testing-without-a-radio).
 
 ## Watch the project
 
@@ -146,7 +149,7 @@ See [Official Esri References](docs/OFFICIAL_ESRI_LINKS.md) for the ArcGIS Earth
 
 ## Project status
 
-The three published ZIPs are cleaned project distributions built from the current field-tested packages supplied for this repository. Development/test-era names and cache files were removed where they were not operationally required. The downloadable ZIPs contain the program source and launch/build files; the repository front page stays intentionally uncluttered.
+The three tool ZIPs are cleaned project distributions built from the current field-tested packages supplied for this repository. Development/test-era names and cache files were removed where they were not operationally required. The downloadable ZIPs contain the program source and launch/build files; the repository front page stays intentionally uncluttered. The PRAVE / RMC Field Decoder Tester ZIP is the owner's Gold bench generator, published unmodified; its development activity log was left out.
 
 ---
 

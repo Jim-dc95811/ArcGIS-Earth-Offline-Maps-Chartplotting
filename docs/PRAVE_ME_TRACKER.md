@@ -52,6 +52,49 @@ ME tracking starts enabled. Press **T** in the tracker console to toggle ME draw
 
 The ArcGIS Earth Drawings API provides add/delete operations for the point drawing path used here, so fresh PRAVE reports replace the previous drawing. If an individual PRAVE unit is unchecked in ArcGIS Earth while the tracker is running, the next report can recreate it as visible. Stop the tracker to suspend all updates.
 
+## Bench testing without a radio
+
+The **PRAVE / RMC Field Decoder Tester v1.0 Gold** generates the same mixed serial stream the Raveon radio produces, so the tracker can be tested at a desk:
+
+- one valid `$GPRMC` every second at a fixed ME position (30.419107, -81.926499);
+- `$PRAVE` reports at random 1.5-3.5 second intervals from six units, 7-101 to 7-106, arranged in a small grid around ME;
+- one unit per RSSI state, so every icon can be checked at once: 7-101 blank (unknown icon), then 7-102 to 7-106 at -115, -105, -95, -85 and -75 dBm (1 to 5 bars).
+
+**Download:** [`PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip`](../downloads/PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.zip). It contains the tester program, its Windows launcher and the PDF instructions. It needs Python 3 and `pyserial`, like the tracker.
+
+### Connecting tester and tracker
+
+The tester writes to one COM port and the tracker reads another. The two must be linked by a virtual COM-port pair, two FTDI adapters joined with a null-modem connection, or a null-modem cable.
+
+**Both programs default to `COM12`, so change one of them.** For example, with a virtual pair COM11 <-> COM12:
+
+```text
+Tester  (top of PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.py):  OUTPUT_PORT = "COM11"
+Tracker (top of PRAVE_ME_Tracker.py):                           INPUT_PORT  = "COM12"
+```
+
+Keep both at 19200 baud.
+
+### Running a bench test
+
+1. Run the tester self-test: `python PRAVE_RMC_Field_Decoder_Tester_v1_0_Gold.py --self-test`. It should report 7 valid sentences.
+2. Run the tracker's `SELF_TEST.bat`.
+3. Open ArcGIS Earth with the Automation API enabled.
+4. Start the tracker with `START_TRACKER.bat`, then start the tester with its `Run_...bat`.
+5. Within about 10-20 seconds, ME and all six trucks should appear, each with its own RSSI icon.
+6. To test recovery, unplug the serial link for a few seconds and plug it back in. The trucks should stay on the map while the tracker reconnects.
+
+### Where the tester PDF differs from this tracker
+
+The tester's PDF instructions were written for the earlier Google Earth decoder (PRAVE / ME / Time Keeper). With the ArcGIS Earth tracker:
+
+- The tester's default port is `COM12`, not `COM3` as the PDF says.
+- The tracker's icon folder is `C:\MyData\PRAVE_ME\Icons`, not `...\PRAVE_ME_TimeKeeper\Icons`. Set `ICON_FOLDER` in the tracker if yours is elsewhere.
+- The tracker draws units with labels only. The numeric RSSI is shown in the tracker console and logs, not in a placemark description.
+- The tracker never changes the Windows clock, so the PDF's clock-synchronization notes do not apply.
+
+The tester writes every sentence it sends to `logs/` beside the program, about 8 MB per day of continuous running. Delete old logs as needed.
+
 ## Reconnect behavior
 
 If the serial link drops (USB cable pulled, radio power blip), the tracker keeps running and retries every 5 seconds. Units stay on the map at their last reported positions while it reconnects. Drawings left over from an earlier session are cleared only when the tracker starts.
